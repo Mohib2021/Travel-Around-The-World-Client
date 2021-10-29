@@ -11,6 +11,7 @@ import ManageBooking from "./components/Pages/ManageBooking/ManageBooking";
 import AddPackage from "./components/Pages/AddPackage/AddPackage";
 import About from "./components/Pages/About/About";
 import Login from "./components/Pages/Login/Login";
+import ConfirmBooking from "./components/Pages/ConfirmBooking/ConfirmBooking";
 function App() {
 	return (
 		<Router>
@@ -36,6 +37,9 @@ function App() {
 				</Route>
 				<Route path="/login">
 					<Login />
+				</Route>
+				<Route path="/confirmBooking/:_id">
+					<ConfirmBooking />
 				</Route>
 				<Route path="*">
 					<NotFound />

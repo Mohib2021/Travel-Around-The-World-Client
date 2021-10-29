@@ -1,29 +1,99 @@
 import React from "react";
+import { useRef } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { useHistory } from "react-router";
 
 function AddPackage() {
+	const history = useHistory();
+	const titleRef = useRef();
+	const imgRef = useRef();
+	const desRef = useRef();
+	const priceRef = useRef();
+	const locationRef = useRef();
+	const handlePackageSubmit = (e) => {
+		e.preventDefault();
+		const title = titleRef.current.value;
+		const img = imgRef.current.value;
+		const desc = desRef.current.value;
+		const location = locationRef.current.value;
+		const price = priceRef.current.value;
+		const newPackage = {
+			name: title,
+			location: location,
+			image: img,
+			price: price,
+			description: desc,
+			status: "Pending",
+		};
+		fetch("http://localhost:5000/packages", {
+			method: "POST",
+			headers: {
+				"content-type": "application/json",
+			},
+			body: JSON.stringify(newPackage),
+		}).then((res) => {
+			titleRef.current.value = "";
+			imgRef.current.value = "";
+			desRef.current.value = "";
+			locationRef.current.value = "";
+			priceRef.current.value = "";
+			console.log(res);
+			history.push("/home");
+		});
+	};
 	return (
 		<Container>
-			<Row className="justify-content-center my-3 my-md-5">
+			<Row className="justify-content-center my-3 ">
 				<Col md={5} sm={8}>
-					<form className="bg-dark p-3 rounded text-white ">
+					<form
+						onSubmit={handlePackageSubmit}
+						className="bg-dark p-3 rounded text-white "
+					>
 						<h3 className="text-center mb-3">Add a package</h3>
 						<div className="mb-3">
-							<input className="form-control" type="text" placeholder="Title" />
+							<input
+								ref={titleRef}
+								className="form-control"
+								type="text"
+								placeholder="Title"
+								required
+							/>
 						</div>
 						<div className="mb-3">
 							<input
+								ref={locationRef}
+								className="form-control"
+								type="text"
+								placeholder="Location"
+								required
+							/>
+						</div>
+						<div className="mb-3">
+							<input
+								ref={imgRef}
 								className="form-control"
 								type="text"
 								placeholder="Image Link"
+								required
+							/>
+						</div>
+						<div className="mb-3">
+							<input
+								ref={priceRef}
+								className="form-control"
+								type="number"
+								placeholder="Price"
+								required
 							/>
 						</div>
 						<div className="mb-3">
 							<textarea
+								ref={desRef}
 								className="form-control"
 								placeholder="Description"
 								cols="30"
-								rows="10"
+								rows="6"
+								required
 							></textarea>
 						</div>
 						<input
