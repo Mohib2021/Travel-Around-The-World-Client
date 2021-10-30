@@ -12,40 +12,44 @@ import AddPackage from "./components/Pages/AddPackage/AddPackage";
 import About from "./components/Pages/About/About";
 import Login from "./components/Pages/Login/Login";
 import ConfirmBooking from "./components/Pages/ConfirmBooking/ConfirmBooking";
+import AuthProvider from "./components/Hooks/useFirebase/AuthProvider";
+import PrivetRoute from "./components/PrivetRoute/PrivetRoute";
 function App() {
 	return (
 		<Router>
-			<Header />
-			<Switch>
-				<Route path="/" exact>
-					<Home />
-				</Route>
-				<Route path="/home">
-					<Home />
-				</Route>
-				<Route path="/myBooking">
-					<MyBooking />
-				</Route>
-				<Route path="/manageBooking">
-					<ManageBooking />
-				</Route>
-				<Route path="/addPackage">
-					<AddPackage />
-				</Route>
-				<Route path="/about">
-					<About />
-				</Route>
-				<Route path="/login">
-					<Login />
-				</Route>
-				<Route path="/confirmBooking/:_id">
-					<ConfirmBooking />
-				</Route>
-				<Route path="*">
-					<NotFound />
-				</Route>
-			</Switch>
-			<Footer />
+			<AuthProvider>
+				<Header />
+				<Switch>
+					<Route path="/" exact>
+						<Home />
+					</Route>
+					<Route path="/home">
+						<Home />
+					</Route>
+					<Route path="/myBooking">
+						<MyBooking />
+					</Route>
+					<Route path="/manageBooking">
+						<ManageBooking />
+					</Route>
+					<Route path="/addPackage">
+						<AddPackage />
+					</Route>
+					<Route path="/about">
+						<About />
+					</Route>
+					<Route path="/login">
+						<Login />
+					</Route>
+					<PrivetRoute path="/confirmBooking/:_id">
+						<ConfirmBooking />
+					</PrivetRoute>
+					<Route path="*">
+						<NotFound />
+					</Route>
+				</Switch>
+				<Footer />
+			</AuthProvider>
 		</Router>
 	);
 }

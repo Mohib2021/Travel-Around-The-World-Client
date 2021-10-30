@@ -9,7 +9,7 @@ function TravellerReviews() {
 	return (
 		<div className="mb-3">
 			<div className="text-center my-3 mt-md-4">
-				<h2>Oru Traveller's Reviews :-</h2>
+				<h2>Our Traveller's Reviews :-</h2>
 			</div>
 			<Carousel fade>
 				<Carousel.Item>

@@ -3,14 +3,17 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
+import useAuth from "../../Hooks/useFirebase/useAuth";
 
 function ConfirmBooking() {
+	const history = useHistory();
 	const nameRef = useRef();
 	const emailRef = useRef();
 	const addressRef = useRef();
 	const [bookingPackage, setBookingPackage] = useState({});
-	const { name, image, description, location, price } = bookingPackage;
+	const { name, image, description, location, price, status } = bookingPackage;
+	const { user } = useAuth();
 	const { _id } = useParams();
 	const url = `http://localhost:5000/packages/${_id}`;
 	useEffect(() => {
@@ -21,6 +24,7 @@ function ConfirmBooking() {
 	const shadowStyle = {
 		boxShadow: "0px 0px 10px gray",
 	};
+
 	const handleSubmitConfirmation = (e) => {
 		e.preventDefault();
 		const fullName = nameRef.current.value;
@@ -35,6 +39,7 @@ function ConfirmBooking() {
 			description: description,
 			price: price,
 			location: location,
+			status: status,
 		};
 		fetch("http://localhost:5000/confirm", {
 			method: "POST",
@@ -46,7 +51,7 @@ function ConfirmBooking() {
 			nameRef.current.value = "";
 			emailRef.current.value = "";
 			addressRef.current.value = "";
-			console.log(res);
+			history.push("/home");
 		});
 	};
 	return (
@@ -73,6 +78,12 @@ function ConfirmBooking() {
 							</div>
 							<p> {description}</p>
 							<h4>${price}</h4>
+							<button
+								onClick={() => history.push("/home")}
+								className="btn btn-outline-dark"
+							>
+								Back
+							</button>
 						</div>
 					</Col>
 					<Col md={6}>
