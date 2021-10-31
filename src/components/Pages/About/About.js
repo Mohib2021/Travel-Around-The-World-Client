@@ -13,7 +13,7 @@ function About() {
 			</div>
 			<Row className="g-4 mb-4">
 				<Col md={4} sm={6}>
-					<div style={shadowStyle} className="p-3">
+					<div data-aos="fade-right" style={shadowStyle} className="p-3">
 						<h4 className="text-center bg-dark text-white py-3 rounded">
 							About Us
 						</h4>
@@ -33,7 +33,7 @@ function About() {
 					</div>
 				</Col>
 				<Col md={4} sm={6}>
-					<div style={shadowStyle} className="p-3">
+					<div data-aos="fade-up" style={shadowStyle} className="p-3">
 						<h4 className="text-center bg-dark text-white py-3 rounded">
 							About Booking System
 						</h4>
@@ -53,7 +53,7 @@ function About() {
 					</div>
 				</Col>
 				<Col md={4} sm={6}>
-					<div style={shadowStyle} className="p-3">
+					<div data-aos="fade-left" style={shadowStyle} className="p-3">
 						<h4 className="text-center bg-dark text-white py-3 rounded">
 							About Tour
 						</h4>

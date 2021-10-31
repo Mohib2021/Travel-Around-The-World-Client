@@ -9,7 +9,10 @@ function Login() {
 		<Container>
 			<Row className="justify-content-center">
 				<Col md={5} sm={5}>
-					<div className="my-4 py-3 bg-dark rounded text-center text-white">
+					<div
+						data-aos="fade-down"
+						className="my-4 py-3 bg-dark rounded text-center text-white"
+					>
 						<img
 							style={{ width: "20%" }}
 							className="img-fluid"

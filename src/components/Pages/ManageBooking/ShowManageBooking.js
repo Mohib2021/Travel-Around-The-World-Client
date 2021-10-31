@@ -9,8 +9,8 @@ function ShowManageBooking({ booking, deletePackage, approve }) {
 	};
 
 	return (
-		<Col md={3} sm={4} xs={6}>
-			<div className="my-4 p-2 " style={shadow}>
+		<Col md={3} sm={6} xs={12}>
+			<div data-aos="fade-right" className="my-3 my-md-4 p-2 " style={shadow}>
 				<img className="img-fluid" src={packageImg} alt="package-Img" />
 				<h4>{packageName}</h4>
 				<div className="blockquote-footer ms-5 my-3">

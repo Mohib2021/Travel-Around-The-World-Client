@@ -7,7 +7,7 @@ function PopularDestination() {
 			<h2 className="text-center">Popular Destinations :-</h2>
 			<Row className="g-3 mt-2 align-items-center">
 				<Col md={6} sm={12} className="order-md-0 order-sm-0">
-					<div>
+					<div data-aos="fade-right">
 						<h4>The Taj Mahal</h4>
 						<div className="ms-5 mb-3">
 							<b className="blockquote-footer">Agra, India</b>
@@ -22,7 +22,7 @@ function PopularDestination() {
 					</div>
 				</Col>
 				<Col md={6} sm={12} className="order-md-2 order-sm-2">
-					<div>
+					<div data-aos="fade-left">
 						<img
 							className="img-fluid"
 							src="https://images.pexels.com/photos/3881104/pexels-photo-3881104.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
@@ -31,7 +31,7 @@ function PopularDestination() {
 					</div>
 				</Col>
 				<Col md={6} sm={12} className="order-md-3 order-sm-2">
-					<div>
+					<div data-aos="fade-left">
 						<h4>The Water Fall</h4>
 						<div className="ms-5 mb-3">
 							<b className="blockquote-footer">Salto Angle, Venezuela</b>
@@ -45,7 +45,7 @@ function PopularDestination() {
 					</div>
 				</Col>
 				<Col md={6} sm={12} className="order-md-2 order-sm-3">
-					<div>
+					<div data-aos="fade-right">
 						<img
 							className="img-fluid"
 							src="https://images.pexels.com/photos/3836292/pexels-photo-3836292.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
@@ -54,7 +54,7 @@ function PopularDestination() {
 					</div>
 				</Col>
 				<Col md={6} sm={12} className="order-md-4 ">
-					<div>
+					<div data-aos="fade-right">
 						<h4>The Eiffel Tower </h4>
 						<div className="ms-5 mb-3">
 							<b className="blockquote-footer">Parish, French</b>
@@ -69,7 +69,7 @@ function PopularDestination() {
 					</div>
 				</Col>
 				<Col md={6} sm={12} className="order-5">
-					<div>
+					<div data-aos="fade-left">
 						<img
 							className="img-fluid"
 							src="https://images.pexels.com/photos/2082103/pexels-photo-2082103.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"

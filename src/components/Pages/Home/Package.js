@@ -13,13 +13,19 @@ function Package({ singlePackage }) {
 
 	return (
 		<Col md={4} sm={6}>
-			<div className="bg-dark text-white p-3 rounded" style={shadowStyle}>
+			<div
+				data-aos="fade-up"
+				className="bg-dark text-white p-3 rounded"
+				style={shadowStyle}
+			>
 				<img className="img-fluid rounded" src={image} alt="package-img" />
 				<h4 className="mt-2">{name}</h4>
 				<div className="blockquote-footer mt-2 ms-5">
 					<b>{location}</b>
 				</div>
-				<p>{description}</p>
+				<div data-aos="fade-right" data-aos-delay="650" data-aos-offset="120">
+					<p>{description}</p>
+				</div>
 				<h4 className="mb-3">${price}</h4>
 				<button
 					onClick={() => history.push(`/confirmBooking/${_id}`)}

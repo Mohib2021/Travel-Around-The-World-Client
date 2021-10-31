@@ -14,6 +14,13 @@ import Login from "./components/Pages/Login/Login";
 import ConfirmBooking from "./components/Pages/ConfirmBooking/ConfirmBooking";
 import AuthProvider from "./components/Hooks/useFirebase/AuthProvider";
 import PrivetRoute from "./components/PrivetRoute/PrivetRoute";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init({
+	offset: 150,
+	delay: 500,
+	duration: 1000,
+});
 function App() {
 	return (
 		<Router>

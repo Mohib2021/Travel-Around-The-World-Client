@@ -65,7 +65,7 @@ function ConfirmBooking() {
 					className=" my-3  align-items-center justify-content-center py-3 px-2"
 				>
 					<Col md={6}>
-						<div>
+						<div data-aos="fade-right">
 							<img
 								className="img-fluid rounded"
 								src={image}
@@ -74,7 +74,7 @@ function ConfirmBooking() {
 						</div>
 					</Col>
 					<Col md={6}>
-						<div className="mt-md-0 mt-3">
+						<div data-aos="fade-left" className="mt-md-0 mt-3">
 							<h3> {name}</h3>
 							<div className="blockquote-footer mt-3 ms-5">
 								<b>{location}</b>
@@ -92,6 +92,7 @@ function ConfirmBooking() {
 					<Col md={6}>
 						<div>
 							<form
+								data-aos="fade-down"
 								onSubmit={handleSubmitConfirmation}
 								style={shadowStyle}
 								className=" p-3 mt-3 bg-dark text-white rounded "

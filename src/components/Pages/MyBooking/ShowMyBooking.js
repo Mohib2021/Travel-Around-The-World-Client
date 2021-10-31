@@ -13,12 +13,12 @@ function ShowMyBooking({ booking, deleteBookingPackage }) {
 		<>
 			<Row style={shadow} className=" align-items-center mb-3 mb-md-4">
 				<Col className="mt-0 py-2" md={6} sm={12}>
-					<div>
+					<div data-aos="fade-right">
 						<img className="img-fluid rounded" src={packageImg} alt="" />
 					</div>
 				</Col>
 				<Col className="mt-0 my-2" md={6} sm={12}>
-					<div>
+					<div data-aos="fade-left">
 						<h4>{packageName}</h4>
 						<div className="blockquote-footer my-2 ms-5">
 							<b>{location}</b>

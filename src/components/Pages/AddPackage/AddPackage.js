@@ -50,6 +50,7 @@ function AddPackage() {
 			<Row className="justify-content-center my-3 ">
 				<Col md={5} sm={8}>
 					<form
+						data-aos="fade-up"
 						onSubmit={handlePackageSubmit}
 						className="bg-dark p-3 rounded text-white "
 					>
