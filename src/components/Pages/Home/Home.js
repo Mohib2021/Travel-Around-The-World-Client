@@ -9,6 +9,7 @@ import "./Home.css";
 import PopularDestination from "./PopularDestination";
 function Home() {
 	const [packages, setPackages] = useState([]);
+	// loading all packages
 	useEffect(() => {
 		fetch("https://mysterious-everglades-05992.herokuapp.com/packages")
 			.then((res) => res.json())

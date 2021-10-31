@@ -10,8 +10,6 @@ import { useHistory, useLocation } from "react-router";
 import initializeFirebase from "../../Firebase/Firebase.init";
 initializeFirebase();
 const useFirebase = () => {
-	const [error, setError] = useState("");
-
 	const [user, setUser] = useState({});
 	const [isLoading, setIsLoading] = useState(true);
 	const auth = getAuth();
@@ -19,20 +17,23 @@ const useFirebase = () => {
 	const location = useLocation();
 	const history = useHistory();
 	const redirectURL = location.state?.from || "home";
+	// google sign Up method
 	const signUpUsingGoogle = () => {
 		signInWithPopup(auth, googleProvider)
 			.then((res) => {
 				setUser(res.user);
 				history.push(redirectURL);
 			})
-			.catch((err) => setError(err.message))
+			.catch((err) => {})
 			.finally(setIsLoading(false));
 	};
+	// sign out method
 	const logOut = () => {
 		signOut(auth).then(() => {
 			setUser({});
 		});
 	};
+	// observer
 	onAuthStateChanged(auth, (user) => {
 		if (user) {
 			setUser(user);

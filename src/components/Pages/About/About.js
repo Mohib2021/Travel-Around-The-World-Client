@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
 function About() {
+	// making shadow
 	const shadowStyle = {
 		boxShadow: "0px 0px 10px gray",
 	};

@@ -2,6 +2,7 @@ import React from "react";
 import { Col } from "react-bootstrap";
 
 function ShowManageBooking({ booking, deletePackage, approve }) {
+	// destructuring booking data
 	const { packageName, packageImg, status, _id } = booking;
 	const shadow = {
 		boxShadow: "0px 0px 10px gray",

@@ -1,10 +1,9 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { useHistory, useLocation } from "react-router";
 import useAuth from "../../Hooks/useFirebase/useAuth";
 
 function Login() {
-	const { user, signUpUsingGoogle } = useAuth();
+	const { signUpUsingGoogle } = useAuth();
 
 	return (
 		<Container>
@@ -17,7 +16,7 @@ function Login() {
 							src="https://i.ibb.co/wpMWsDM/helicopter2.png"
 							alt=""
 						/>
-						<h2 className="">Please Login</h2>
+						<h3 className="">Please Login With Google</h3>
 						<img
 							onClick={signUpUsingGoogle}
 							style={{ cursor: "pointer", width: "40%" }}

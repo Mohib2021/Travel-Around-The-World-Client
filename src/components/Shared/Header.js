@@ -22,7 +22,7 @@ function Header() {
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav className="ms-auto navigation text-center text-md-start">
-							<Nav.Link className="active ms-0" as={Link} to="/home">
+							<Nav.Link className="active " as={Link} to="/home">
 								Home
 							</Nav.Link>
 							{user.displayName && (

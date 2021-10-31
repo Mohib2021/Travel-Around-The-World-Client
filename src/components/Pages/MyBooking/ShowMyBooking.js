@@ -4,6 +4,7 @@ import { Col, Row } from "react-bootstrap";
 function ShowMyBooking({ booking, deleteBookingPackage }) {
 	const { price, packageImg, packageName, location, description, status, _id } =
 		booking;
+	// making custom shadow
 	const shadow = {
 		boxShadow: "0px 0px 10px gray",
 	};

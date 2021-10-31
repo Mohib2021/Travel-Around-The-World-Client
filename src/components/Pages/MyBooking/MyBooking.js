@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Spinner } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import useAuth from "../../Hooks/useFirebase/useAuth";
 import ShowMyBooking from "./ShowMyBooking";
 
@@ -7,6 +7,7 @@ function MyBooking() {
 	const { user } = useAuth();
 	const [booking, setBooking] = useState([]);
 	const deleteBookingPackage = (_id) => {
+		// checking, the user is sure to delete  or not
 		const confirmation = window.confirm(
 			"Are you sure that you want to cancel?"
 		);
@@ -23,6 +24,7 @@ function MyBooking() {
 			.then((data) => setBooking(data));
 	}, [deleteBookingPackage]);
 
+	// filtering the login user's booking
 	const currentUserBooking = booking.filter(
 		(singleData) => user.email === singleData.email
 	);

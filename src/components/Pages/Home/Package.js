@@ -4,7 +4,9 @@ import { useHistory } from "react-router";
 
 function Package({ singlePackage }) {
 	const history = useHistory();
+	// destructuring
 	const { name, image, description, _id, price, location } = singlePackage;
+	// making shadow
 	const shadowStyle = {
 		boxShadow: "4px 5px 7px  black",
 	};

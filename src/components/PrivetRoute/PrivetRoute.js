@@ -1,9 +1,10 @@
 import { Spinner } from "react-bootstrap";
 import { Redirect, Route } from "react-router";
 import useAuth from "../Hooks/useFirebase/useAuth";
-
+// privet route creating
 const PrivetRoute = ({ children, ...rest }) => {
 	const { user, isLoading } = useAuth();
+	// checking whether data is loading
 	if (isLoading) {
 		return (
 			<div

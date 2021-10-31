@@ -5,6 +5,7 @@ import { useHistory } from "react-router";
 
 function AddPackage() {
 	const history = useHistory();
+	// using useRef to get input value
 	const titleRef = useRef();
 	const imgRef = useRef();
 	const desRef = useRef();
@@ -12,11 +13,13 @@ function AddPackage() {
 	const locationRef = useRef();
 	const handlePackageSubmit = (e) => {
 		e.preventDefault();
+		// getting input value by the help of ref
 		const title = titleRef.current.value;
 		const img = imgRef.current.value;
 		const desc = desRef.current.value;
 		const location = locationRef.current.value;
 		const price = priceRef.current.value;
+		// making brand new package
 		const newPackage = {
 			name: title,
 			location: location,
@@ -32,6 +35,7 @@ function AddPackage() {
 			},
 			body: JSON.stringify(newPackage),
 		}).then((res) => {
+			// clearing the input field
 			titleRef.current.value = "";
 			imgRef.current.value = "";
 			desRef.current.value = "";

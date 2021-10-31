@@ -1,4 +1,4 @@
-console.log(process.env);
+// configuring firebase from .env file
 const firebaseConfig = {
 	apiKey: process.env.REACT_APP_API_KEY,
 	authDomain: process.env.REACT_APP_AUTH_DOMAIN,

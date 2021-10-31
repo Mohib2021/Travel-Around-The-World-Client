@@ -1,9 +1,11 @@
 import React from "react";
 import { Carousel, Col, Row } from "react-bootstrap";
 import "./TravellerReviews.css";
+// importing font awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 function TravellerReviews() {
+	// getting start icon
 	const star = <FontAwesomeIcon icon={faStar} />;
 
 	return (

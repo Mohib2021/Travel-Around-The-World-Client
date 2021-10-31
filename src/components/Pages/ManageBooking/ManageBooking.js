@@ -5,6 +5,7 @@ import ShowManageBooking from "./ShowManageBooking";
 function ManageBooking() {
 	const [allBooking, setAllBooking] = useState([]);
 	const deleteBookingPackage = (_id) => {
+		// checking, user is sure or not
 		const confirmation = window.confirm(
 			"Are you sure that you want to delete?"
 		);
@@ -15,6 +16,8 @@ function ManageBooking() {
 			}).then((res) => console.log(res));
 		}
 	};
+
+	// updating from pending to approved
 	const approvePackage = (_id) => {
 		const approvedPackage = allBooking.find((single) => single._id === _id);
 		approvedPackage.status = "Approved";

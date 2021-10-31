@@ -8,12 +8,12 @@ import useAuth from "../../Hooks/useFirebase/useAuth";
 
 function ConfirmBooking() {
 	const history = useHistory();
+	// using useRef to get input value
 	const nameRef = useRef();
 	const emailRef = useRef();
 	const addressRef = useRef();
 	const [bookingPackage, setBookingPackage] = useState({});
 	const { name, image, description, location, price, status } = bookingPackage;
-	const { user } = useAuth();
 	const { _id } = useParams();
 	const url = `https://mysterious-everglades-05992.herokuapp.com/packages/${_id}`;
 	useEffect(() => {
@@ -21,15 +21,18 @@ function ConfirmBooking() {
 			.then((res) => res.json())
 			.then((data) => setBookingPackage(data));
 	}, []);
+	// creating shadow
 	const shadowStyle = {
 		boxShadow: "0px 0px 10px gray",
 	};
 
 	const handleSubmitConfirmation = (e) => {
 		e.preventDefault();
+		// getting input value
 		const fullName = nameRef.current.value;
 		const email = emailRef.current.value;
 		const address = addressRef.current.value;
+		// making booking package
 		const bookingPackage = {
 			fullName: fullName,
 			email: email,
@@ -48,6 +51,7 @@ function ConfirmBooking() {
 			},
 			body: JSON.stringify(bookingPackage),
 		}).then((res) => {
+			// clearing input field
 			nameRef.current.value = "";
 			emailRef.current.value = "";
 			addressRef.current.value = "";
