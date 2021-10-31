@@ -1,7 +1,7 @@
 import React from "react";
 import { Col } from "react-bootstrap";
 
-function ShowManageBooking({ booking, deletePackage }) {
+function ShowManageBooking({ booking, deletePackage, approve }) {
 	const { packageName, packageImg, status, _id } = booking;
 	const shadow = {
 		boxShadow: "0px 0px 10px gray",
@@ -15,7 +15,9 @@ function ShowManageBooking({ booking, deletePackage }) {
 				<div className="blockquote-footer ms-5 my-3">
 					<b>{status}</b>
 				</div>
-				<button className="btn btn-dark me-3">Approve</button>
+				<button onClick={() => approve(_id)} className="btn btn-dark me-3">
+					Approve
+				</button>
 				<button onClick={() => deletePackage(_id)} className="btn btn-danger">
 					Delete
 				</button>

@@ -15,7 +15,7 @@ function ConfirmBooking() {
 	const { name, image, description, location, price, status } = bookingPackage;
 	const { user } = useAuth();
 	const { _id } = useParams();
-	const url = `http://localhost:5000/packages/${_id}`;
+	const url = `https://mysterious-everglades-05992.herokuapp.com/packages/${_id}`;
 	useEffect(() => {
 		fetch(url)
 			.then((res) => res.json())
@@ -41,7 +41,7 @@ function ConfirmBooking() {
 			location: location,
 			status: status,
 		};
-		fetch("http://localhost:5000/confirm", {
+		fetch("https://mysterious-everglades-05992.herokuapp.com/confirm", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
@@ -96,11 +96,21 @@ function ConfirmBooking() {
 								<h3 className="text-center mb-3">Confirm Your Booking</h3>
 								<div className="mb-3">
 									<label htmlFor="name">Your Full Name :</label>
-									<input ref={nameRef} className="form-control" type="text" />
+									<input
+										ref={nameRef}
+										className="form-control"
+										type="text"
+										required
+									/>
 								</div>
 								<div className="mb-3">
 									<label htmlFor="email">Your Email :</label>
-									<input ref={emailRef} className="form-control" type="text" />
+									<input
+										ref={emailRef}
+										className="form-control"
+										type="text"
+										required
+									/>
 								</div>
 								<div className="mb-3">
 									<label htmlFor="home-address">Your Address :</label>
@@ -110,6 +120,7 @@ function ConfirmBooking() {
 										placeholder="Address"
 										cols="30"
 										rows="5"
+										required
 									></textarea>
 								</div>
 								<input

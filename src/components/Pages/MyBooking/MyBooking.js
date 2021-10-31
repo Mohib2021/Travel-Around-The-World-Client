@@ -11,14 +11,14 @@ function MyBooking() {
 			"Are you sure that you want to cancel?"
 		);
 		if (confirmation) {
-			const url = `http://localhost:5000/confirm/${_id}`;
+			const url = `https://mysterious-everglades-05992.herokuapp.com/confirm/${_id}`;
 			fetch(url, {
 				method: "DELETE",
 			}).then((res) => console.log(res));
 		}
 	};
 	useEffect(() => {
-		fetch("http://localhost:5000/confirm")
+		fetch("https://mysterious-everglades-05992.herokuapp.com/confirm")
 			.then((res) => res.json())
 			.then((data) => setBooking(data));
 	}, [deleteBookingPackage]);

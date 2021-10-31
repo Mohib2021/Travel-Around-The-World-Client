@@ -25,7 +25,7 @@ function AddPackage() {
 			description: desc,
 			status: "Pending",
 		};
-		fetch("http://localhost:5000/packages", {
+		fetch("https://mysterious-everglades-05992.herokuapp.com/packages", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",

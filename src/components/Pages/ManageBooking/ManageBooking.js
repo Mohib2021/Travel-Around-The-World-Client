@@ -9,14 +9,27 @@ function ManageBooking() {
 			"Are you sure that you want to delete?"
 		);
 		if (confirmation) {
-			const url = `http://localhost:5000/confirm/${_id}`;
+			const url = `https://mysterious-everglades-05992.herokuapp.com/confirm/${_id}`;
 			fetch(url, {
 				method: "DELETE",
 			}).then((res) => console.log(res));
 		}
 	};
+	const approvePackage = (_id) => {
+		const approvedPackage = allBooking.find((single) => single._id === _id);
+		approvedPackage.status = "Approved";
+
+		const url = `https://mysterious-everglades-05992.herokuapp.com/confirm/${_id}`;
+		fetch(url, {
+			method: "PUT",
+			headers: {
+				"content-type": "application/json",
+			},
+			body: JSON.stringify(approvedPackage),
+		}).then((res) => console.log(res));
+	};
 	useEffect(() => {
-		fetch("http://localhost:5000/confirm")
+		fetch("https://mysterious-everglades-05992.herokuapp.com/confirm")
 			.then((res) => res.json())
 			.then((data) => setAllBooking(data));
 	}, [deleteBookingPackage]);
@@ -32,6 +45,7 @@ function ManageBooking() {
 							key={booking._id}
 							booking={booking}
 							deletePackage={deleteBookingPackage}
+							approve={approvePackage}
 						/>
 					))}
 				</Row>

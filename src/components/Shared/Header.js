@@ -9,7 +9,7 @@ function Header() {
 		<div className="sticky-top">
 			<Navbar bg="dark" collapseOnSelect variant="dark" expand="lg">
 				<Container>
-					<Navbar.Brand href="#home">
+					<Navbar.Brand as={Link} to="/home">
 						<div className="d-flex align-items-center">
 							<img
 								className="img-fluid logo me-2"

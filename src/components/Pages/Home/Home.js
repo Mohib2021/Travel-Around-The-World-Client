@@ -10,7 +10,7 @@ import PopularDestination from "./PopularDestination";
 function Home() {
 	const [packages, setPackages] = useState([]);
 	useEffect(() => {
-		fetch("http://localhost:5000/packages")
+		fetch("https://mysterious-everglades-05992.herokuapp.com/packages")
 			.then((res) => res.json())
 			.then((data) => setPackages(data));
 	}, []);
