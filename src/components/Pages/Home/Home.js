@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Spinner } from "react-bootstrap";
 import Carousal from "./Carousal";
 import Package from "./Package";
 import TravellerReviews from "./TravellerReviews";
@@ -13,7 +13,9 @@ function Home() {
 	useEffect(() => {
 		fetch("https://mysterious-everglades-05992.herokuapp.com/packages")
 			.then((res) => res.json())
-			.then((data) => setPackages(data));
+			.then((data) => {
+				setPackages(data);
+			});
 	}, []);
 	return (
 		<div>
@@ -22,11 +24,21 @@ function Home() {
 				<div className=" my-3 mt-md-4">
 					<h2 className="text-center">Our Packages :-</h2>
 				</div>
-				<Row className="g-4 mb-3">
-					{packages.map((singlePackage) => (
-						<Package key={singlePackage._id} singlePackage={singlePackage} />
-					))}
-				</Row>
+				{packages.length ? (
+					<Row className="g-4 mb-3">
+						{packages.map((singlePackage) => (
+							<Package key={singlePackage._id} singlePackage={singlePackage} />
+						))}
+					</Row>
+				) : (
+					<div
+						style={{ height: "50vh" }}
+						className="mt-5 d-flex align-items-center justify-content-center"
+					>
+						<h4 className="me-2">Loading...</h4>
+						<Spinner animation="border" variant="dark" />
+					</div>
+				)}
 				<PopularDestination />
 				<TravellerReviews />
 			</Container>

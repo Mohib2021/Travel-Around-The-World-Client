@@ -4,7 +4,6 @@ import { useRef } from "react";
 import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useHistory, useParams } from "react-router";
-import useAuth from "../../Hooks/useFirebase/useAuth";
 
 function ConfirmBooking() {
 	const history = useHistory();

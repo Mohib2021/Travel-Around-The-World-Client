@@ -1,5 +1,5 @@
 import React from "react";
-import { Col } from "react-bootstrap";
+import { Col, Spinner } from "react-bootstrap";
 import { useHistory } from "react-router";
 
 function Package({ singlePackage }) {
@@ -10,6 +10,7 @@ function Package({ singlePackage }) {
 	const shadowStyle = {
 		boxShadow: "4px 5px 7px  black",
 	};
+
 	return (
 		<Col md={4} sm={6}>
 			<div className="bg-dark text-white p-3 rounded" style={shadowStyle}>
