@@ -5,7 +5,7 @@ import {
 	onAuthStateChanged,
 	signOut,
 } from "firebase/auth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router";
 import initializeFirebase from "../../Firebase/Firebase.init";
 initializeFirebase();
@@ -34,12 +34,14 @@ const useFirebase = () => {
 		});
 	};
 	// observer
-	onAuthStateChanged(auth, (user) => {
-		if (user) {
-			setUser(user);
+	useEffect(() => {
+		onAuthStateChanged(auth, (user) => {
+			if (user) {
+				setUser(user);
+			}
 			setIsLoading(false);
-		}
-	});
+		});
+	}, []);
 	return { user, signUpUsingGoogle, logOut, isLoading };
 };
 export default useFirebase;
