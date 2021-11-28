@@ -7,8 +7,8 @@
 We have tour system of the most popular places all over the world. People who have free time or have a vacaion in a particular can visit our plackge's place with high security and safety. Our main gola is to let you know and explore the world though it's not a regular basis tour.
 **The key features of our website :-**
 
-- Let you know the most popular places all around the world.
-- Give you a great idea about different type of culture.
-- Booking packages according to your mind.
-- Ensuring your saifty while travelling.
+- You can give booking for any of the particular place.
+- You can Manage all of the bookings.
+- You can add a new place in the packages..
+- Ensuring your safety while travelling.
 - Making your life more meaningful and enjoyable.
