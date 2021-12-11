@@ -19,7 +19,7 @@ function ConfirmBooking() {
 		fetch(url)
 			.then((res) => res.json())
 			.then((data) => setBookingPackage(data));
-	}, []);
+	}, [url]);
 	// creating shadow
 	const shadowStyle = {
 		boxShadow: "0px 0px 10px gray",

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useCallback } from "react";
 import { Container, Row } from "react-bootstrap";
 import ShowManageBooking from "./ShowManageBooking";
 
@@ -31,11 +32,14 @@ function ManageBooking() {
 			body: JSON.stringify(approvedPackage),
 		}).then((res) => console.log(res));
 	};
+	const backCall = useCallback(() => {
+		//body
+	}, [deleteBookingPackage]);
 	useEffect(() => {
 		fetch("https://mysterious-everglades-05992.herokuapp.com/confirm")
 			.then((res) => res.json())
 			.then((data) => setAllBooking(data));
-	}, [deleteBookingPackage]);
+	}, [backCall]);
 	return (
 		<Container>
 			<div className="text-center mt-3">

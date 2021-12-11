@@ -41,7 +41,7 @@ const useFirebase = () => {
 			}
 			setIsLoading(false);
 		});
-	}, []);
+	}, [auth]);
 	return { user, signUpUsingGoogle, logOut, isLoading };
 };
 export default useFirebase;

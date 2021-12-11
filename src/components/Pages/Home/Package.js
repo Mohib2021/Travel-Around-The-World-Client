@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Spinner } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import { useHistory } from "react-router";
 
 function Package({ singlePackage }) {

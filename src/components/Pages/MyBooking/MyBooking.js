@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 import { Container } from "react-bootstrap";
 import useAuth from "../../Hooks/useFirebase/useAuth";
 import ShowMyBooking from "./ShowMyBooking";
@@ -18,11 +18,14 @@ function MyBooking() {
 			}).then((res) => console.log(res));
 		}
 	};
+	const backCall = useCallback(() => {
+		//body
+	}, [deleteBookingPackage]);
 	useEffect(() => {
 		fetch("https://mysterious-everglades-05992.herokuapp.com/confirm")
 			.then((res) => res.json())
 			.then((data) => setBooking(data));
-	}, [deleteBookingPackage]);
+	}, [backCall]);
 
 	// filtering the login user's booking
 	const currentUserBooking = booking.filter(
